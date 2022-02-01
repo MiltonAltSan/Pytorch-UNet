@@ -16,9 +16,9 @@ from utils.dice_score import dice_loss
 from evaluate import evaluate
 from unet import UNet
 
-dir_img = Path('./data/imgs/')
-dir_mask = Path('./data/masks/')
-dir_checkpoint = Path('./checkpoints/')
+dir_img = Path('/content/Pytorch-UNet-master/data/imgs')
+dir_mask = Path('/content/Pytorch-UNet-master/data/masks/')
+dir_checkpoint = Path('/content/Pytorch-UNet-master/checkpoints/')
 
 
 def train_net(net,
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     # Change here to adapt to your data
     # n_channels=3 for RGB images
     # n_classes is the number of probabilities you want to get per pixel
-    net = UNet(n_channels=3, n_classes=2, bilinear=True)
+    net = UNet(n_channels=3, n_classes=5, bilinear=True)
 
     logging.info(f'Network:\n'
                  f'\t{net.n_channels} input channels\n'
