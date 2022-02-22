@@ -62,6 +62,7 @@ def train_net(net,
         Device:          {device.type}
         Images scaling:  {img_scale}
         Mixed Precision: {amp}
+        Network:         {net}
     ''')
 
     # 4. Set up the optimizer, the loss, the learning rate scheduler and the loss scaling for AMP
