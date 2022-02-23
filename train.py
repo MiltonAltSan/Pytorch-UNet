@@ -14,7 +14,9 @@ from tqdm import tqdm
 from utils.data_loading import BasicDataset, CarvanaDataset
 from utils.dice_score import dice_loss
 from evaluate import evaluate
-from unet import *
+from unet import AttU_Net
+from unet import UNet
+
 
 dir_img = Path('/content/Pytorch-UNet-master/data/imgs')
 dir_mask = Path('/content/Pytorch-UNet-master/data/masks/')
