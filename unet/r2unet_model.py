@@ -70,9 +70,6 @@ class RRCNN_block(nn.Module):
     """
     def __init__(self, in_ch, out_ch, t=2):
         super(RRCNN_block, self).__init__()
-        self.n_channels = n_channels
-        self.n_classes = n_classes
-        self.bilinear = bilinear
         
         self.RCNN = nn.Sequential(
             Recurrent_block(out_ch, t=t),
@@ -95,7 +92,6 @@ class R2U_Net(nn.Module):
         super(R2U_Net, self).__init__()
         self.n_channels = n_channels
         self.n_classes = n_classes
-        self.bilinear = bilinear
         
         n1 = 64
         filters = [n1, n1 * 2, n1 * 4, n1 * 8, n1 * 16]
