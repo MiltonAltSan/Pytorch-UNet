@@ -14,7 +14,7 @@ from tqdm import tqdm
 from utils.data_loading import BasicDataset, CarvanaDataset
 from utils.dice_score import dice_loss
 from evaluate import evaluate
-from unet import AttU_Net
+from unet import Unet_dict, NestedUNet, U_Net, R2U_Net, AttU_Net, R2AttU_Net
 
 dir_img = Path('/content/Pytorch-UNet-master/data/imgs')
 dir_mask = Path('/content/Pytorch-UNet-master/data/masks/')
@@ -171,7 +171,10 @@ if __name__ == '__main__':
     # Change here to adapt to your data
     # n_channels=3 for RGB images
     # n_classes is the number of probabilities you want to get per pixel
-    net = AttU_Net(n_channels=3, n_classes=5, bilinear=True)
+    #   R2U_Net(n_channels=1, n_classes=5, t=2, bilinear=True)
+    #   R2AttU_Net(n_channels=1, n_classes=5, t=2, bilinear=True)
+    #   NestedUNet(n_channels=3, n_classes=5, bilinear=True)
+    net = NestedUNet(n_channels=3, n_classes=5, bilinear=True)
 
     logging.info(f'Network:\n'
                  f'\t{net.n_channels} input channels\n'
